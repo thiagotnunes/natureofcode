@@ -11,15 +11,15 @@
     (- speed)
     speed))
 
-(defn- refresh-speed [[x y] [xSpeed ySpeed] width height]
+(defn- refresh-speed [[x y] [xSpeed ySpeed] [width height]]
   [(next-speed x width xSpeed)
    (next-speed y height ySpeed)])
 
-(defn move! [[width height]]
+(defn move! [dimensions]
   (let [current-state @state
         position (:position current-state)
         speed (:speed current-state)
         next-position (move position speed)
-        next-speed (refresh-speed next-position speed width height)]
+        next-speed (refresh-speed next-position speed dimensions)]
     (swap! state conj {:position next-position
                        :speed next-speed})))
