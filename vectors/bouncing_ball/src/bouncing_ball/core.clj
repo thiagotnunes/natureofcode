@@ -1,10 +1,10 @@
 (ns bouncing-ball.core
   (:require
-   [quil.core          :refer :all]
+   [quil.core                 :refer :all]
    [bouncing-ball.ball-drawer :as ball-drawer]
-   [bouncing-ball.ball :as ball]))
+   [bouncing-ball.ball        :as ball]))
 
-(def dimensions [323 200])
+(def dimensions [400 400 100])
 
 (defn setup []
   (smooth)
@@ -21,7 +21,8 @@
   :title "Bouncing ball"
   :setup setup
   :draw draw
-  :size [323 200])
+  :size [400 400]
+  :renderer :opengl)
 
 (defn -main [& args]
   (example))

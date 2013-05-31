@@ -1,19 +1,20 @@
 (ns bouncing-ball.ball)
 
-(def state (atom {:position [10 70]
-                  :speed [4 3.3]}))
+(def state (atom {:position [100 100 0]
+                  :speed [1 3 4]}))
 
-(defn- move [[x y] [xSpeed ySpeed]]
-  [(+ x xSpeed) (+ y ySpeed)])
+(defn- move [[x y z] [xSpeed ySpeed zSpeed]]
+  [(+ x xSpeed) (+ y ySpeed) (+ z zSpeed)])
 
 (defn- next-speed [coord boundary speed]
   (if (or (> coord boundary) (< coord 0))
     (- speed)
     speed))
 
-(defn- refresh-speed [[x y] [xSpeed ySpeed] [width height]]
-  [(next-speed x width xSpeed)
-   (next-speed y height ySpeed)])
+(defn- refresh-speed [[x y z] [xSpeed ySpeed zSpeed] [width height depth]]
+  [(next-speed x (- width 25) xSpeed)
+   (next-speed y (- height 25) ySpeed)
+   (next-speed z depth zSpeed)])
 
 (defn move! [dimensions]
   (let [current-state @state

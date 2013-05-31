@@ -8,10 +8,10 @@
               :diameter 50})
 
 (defn draw [ball]
-  (let [[x y] (:position ball)
+  (let [[x y z] (:position ball)
         diameter (:diameter drawing)]
-    
-    (stroke (:stroke drawing))
-    (stroke-weight (:stroke-weight drawing))
-    (fill (:fill drawing))
-    (ellipse x y diameter diameter)))
+
+    (smooth)
+    (sphere-detail diameter)
+    (translate x y z)
+    (sphere diameter)))
