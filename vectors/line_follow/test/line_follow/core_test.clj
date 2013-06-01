@@ -1,6 +1,6 @@
-(ns bouncing-ball.core-test
+(ns line-follow.core-test
   (:use clojure.test
-        bouncing-ball.core))
+        line-follow.core))
 
 (deftest a-test
   (testing "FIXME, I fail."
