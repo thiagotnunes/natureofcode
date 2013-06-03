@@ -1,4 +1,4 @@
-(ns vectors.example3.core
+(ns vectors.example4.core
   (:require
    [quil.core      :refer :all]
    [vectors.vector :as vector]))
