@@ -19,3 +19,6 @@
 
 (defn normalize [v]
   (div v (mag v)))
+
+(defn random2d []
+  (normalize [(rand-int 10) (rand-int 10)]))
