@@ -1,8 +1,8 @@
-(ns vectors.example6.core
+(ns vectors.example7.core
   (:require
-   [quil.core                    :refer :all]
-   [vectors.example6.ball-drawer :as ball-drawer]
-   [vectors.example6.ball        :as ball]))
+   [quil.core             :refer :all]
+   [vectors.ball-drawer   :as ball-drawer]
+   [vectors.example7.ball :as ball]))
 
 (def dimensions [400 400])
 
@@ -18,7 +18,7 @@
   (ball/move! dimensions))
 
 (defsketch example
-  :title "Constant acceleration ball"
+  :title "Random acceleration ball"
   :setup setup
   :draw draw
   :size [400 400])

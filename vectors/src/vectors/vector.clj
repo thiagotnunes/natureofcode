@@ -18,7 +18,13 @@
   (math/sqrt (+ (* x x) (* y y))))
 
 (defn normalize [v]
-  (div v (mag v)))
+  (let [magnitude (mag v)]
+    (if (= magnitude 0)
+      v
+      (div v magnitude))))
 
 (defn random2d []
-  (normalize [(rand-int 10) (rand-int 10)]))
+  (let [limit 20
+        x (- (rand-int limit) 10)
+        y (- (rand-int limit) 10)]
+    (normalize [x y])))
