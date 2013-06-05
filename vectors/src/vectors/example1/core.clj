@@ -1,8 +1,8 @@
 (ns vectors.example1.core
   (:require
-   [quil.core                    :refer :all]
-   [vectors.example1.ball-drawer :as ball-drawer]
-   [vectors.example1.ball        :as ball]))
+   [quil.core             :refer :all]
+   [vectors.ball-drawer   :as ball-drawer]
+   [vectors.example1.ball :as ball]))
 
 (def dimensions [400 400])
 
